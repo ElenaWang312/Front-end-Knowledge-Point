@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style type="text/css">
-  .box{
-    width: 100%;
-    height: 400px;
-    border: 1px solid #000;
-  }
-  .con{
-    width: 100%;
-    height: 400px;
-    position: absolute;
-  }
+      .box{
+        width: 100%;
+        height: 400px;
+        border: 1px solid #000;
+      }
+      .con{
+        width: 100%;
+        height: 400px;
+        position: absolute;
+      }
 
 /*方法1：绝对定位5050+margin-left为-1/2width、margin-top为-1/2height*/
       #center1{
@@ -44,39 +44,38 @@
        }
 /*方法3：利用justify-content、align-items水平垂直居中*/
       .con3{
-        	height: 400px;
-        	display: flex;
-        	justify-content:space-around;/*水平居中*/
-          /*justify-content:center;/*也可以水平居中*/
-        	align-items:center;/*垂直居中*/
-        }
+      	height: 400px;
+      	display: flex;
+      	justify-content:space-around;/*水平居中*/
+        /*justify-content:center;/*也可以水平居中*/
+      	align-items:center;/*垂直居中*/
+      }
       #center3{
-        	background-color: red;
-        	width: 200px;
-        	height: 200px;
-          text-align: center;
-          line-height: 200px;
-        }
+      	background-color: red;
+      	width: 200px;
+      	height: 200px;
+        text-align: center;
+        line-height: 200px;
+      }
 /*方法4：table、table-cell,将父盒子设置为table-cell元素，可以使用text-align:center和vertical-align:middle实现水平、垂直居中。*/
       .table{
-        	display: table;
-          width: 100%;
-          height: 400px;
-
-        }
+      	display: table;
+        width: 100%;
+        height: 400px;
+      }
       .tableCell{
-          display: table-cell;
-          text-align: center;
-          vertical-align: middle;
-          border: 1px solid #000;
-        }
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #000;
+      }
       #center4{
-        	display: inline-block;
-        	background-color: lightblue;
-        	width: 200px;
-        	height: 200px;
-          line-height: 200px;
-        }   
+      	display: inline-block;
+      	background-color: lightblue;
+      	width: 200px;
+      	height: 200px;
+        line-height: 200px;
+      }   
 	</style>
 </head>
 <body>
