@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+  .box{
+    width: 100%;
+    height: 400px;
+    border: 1px solid #000;
+  }
+  .con{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+  }
+
+/*方法1：绝对定位5050+margin-left为-1/2width、margin-top为-1/2height*/
+      #center1{
+       	width: 200px;
+       	height: 200px;
+       	background: pink;
+       	position: relative;
+       	left: 50%;
+       	top: 50%;
+       	margin-left: -100px;
+       	/*margin是负的一半宽度*/
+       	margin-top: -100px;
+       	/*margin是负的一半高度*/
+        text-align: center;
+        line-height: 200px;
+      }
+/*方法2：绝对定位5050+transform:translate(-50%,-50%)*/
+      #center2{
+       	width: 200px;
+       	height: 200px;
+       	background: orange;
+       	position: relative;
+       	left: 50%;
+       	top: 50%;
+       	transform:translate(-50%,-50%);
+        text-align: center;
+        line-height: 200px;
+       }
+/*方法3：利用justify-content、align-items水平垂直居中*/
+      .con3{
+        	height: 400px;
+        	display: flex;
+        	justify-content:space-around;/*水平居中*/
+          /*justify-content:center;/*也可以水平居中*/
+        	align-items:center;/*垂直居中*/
+        }
+      #center3{
+        	background-color: red;
+        	width: 200px;
+        	height: 200px;
+          text-align: center;
+          line-height: 200px;
+        }
+/*方法4：table、table-cell,将父盒子设置为table-cell元素，可以使用text-align:center和vertical-align:middle实现水平、垂直居中。*/
+      .table{
+        	display: table;
+          width: 100%;
+          height: 400px;
+
+        }
+      .tableCell{
+          display: table-cell;
+          text-align: center;
+          vertical-align: middle;
+          border: 1px solid #000;
+        }
+      .innerBox{
+        	display: inline-block;
+        	background-color: lightblue;
+        	width: 200px;
+        	height: 200px;
+          line-height: 200px;
+        }   
+	</style>
+</head>
+<body>
+	<div class = "box">
+     <div class = "con">
+		   <div id = "center1">水平垂直居中布局方法一</div>
+     </div>
+	</div>
+
+  <div class = "box">
+     <div class = "con">
+       <div id = "center2">水平垂直居中布局方法二</div>
+     </div>
+  </div>
+
+  <div class = "box">
+      <div class = "con3">
+        <div id = "center3">水平垂直居中布局方法三</div>
+      </div>
+  </div>
+
+	<div class = "outerBox table">
+		<div class = "tableCell">
+			<p class="innerBox">水平垂直居中布局方法四</p>
+		</div>
+	</div>
+</body>
+</html>
