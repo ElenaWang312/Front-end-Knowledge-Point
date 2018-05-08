@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BFC应用</title>
+	<style>
+	/*margin塌陷问题--块级标签之间竖直方向的margin会以大的为准,BFC容器不会垂直方向上重叠margin*/
+	    .container1{
+	    	overflow: hidden;
+	    }
+		#box1,#box2,#box3{
+			margin: 5px auto 25px;
+			border: 1px solid #000;
+			height: 100px;
+		}
+	/*元素浮动会发生遮盖问题--BFC容器不会与float元素重叠*/
+		.left{
+			float: left;
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+		.right{
+            height: 200px;
+            background-color: yellow;
+            overflow: auto;
+		}
+	/*高度塌陷问题--BFC容器子元素浮动也能撑开高度*/
+		.container3{
+			background-color: red;
+			overflow: hidden;/*不是BFC的container没有被子元素撑开高度，变为BFC后被撑开高度，也是清除浮动的原理*/
+		}
+		#float{
+			float: left;
+			background-color: blue;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<section class = "container1">
+		<div id = "box1">被一个BFC容器包含的box1不会与垂直方向上的box重叠margin</div>
+	</section>
+	<section class = "container1">
+		<div id = "box2">2</div>
+	</section>
+	<section class = "container1">
+		<div id = "box3">3</div>
+	</section>
+    
+    <section>
+    	<div class="left"></div>
+    	<div class="right">BFC容器不会与float元素重叠</div>
+    </section>
+
+    <section class = "container3">
+    	<div id = "float">我是浮动元素</div>
+    </section>
+</body>
+</html>
